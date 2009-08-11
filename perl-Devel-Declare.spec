@@ -1,39 +1,31 @@
-%define module   Devel-Declare
-%define version    0.005007
-%define release    %mkrel 1
+%define upstream_name    Devel-Declare
+%define upstream_version 0.005009
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Adding keywords to perl, in perl
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Devel/%{module}-%{version}.tar.gz
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(B::Hooks::EndOfScope)
 BuildRequires: perl(B::Hooks::OP::Check)
 BuildRequires: perl(ExtUtils::Depends)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Sub::Name)
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRequires: perl-devel
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-setup_for
-      Devel::Declare->setup_for(
-        $package,
-        {
-          $name => { $op_type => $sub }
-        }
-      );
-
-    Currently valid op types: 'check', 'rv2cv'
-
-
+Devel::Declare can install subroutines called declarators which locally
+take over Perl's parser, allowing the creation of new syntax.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -55,5 +47,3 @@ rm -rf %buildroot
 %{_mandir}/man3/*
 %perl_vendorarch/Devel
 %perl_vendorarch/auto/Devel
-
-
