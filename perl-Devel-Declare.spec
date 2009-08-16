@@ -1,5 +1,5 @@
 %define upstream_name    Devel-Declare
-%define upstream_version 0.005009
+%define upstream_version 0.005011
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
