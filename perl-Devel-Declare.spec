@@ -1,9 +1,9 @@
 %define upstream_name    Devel-Declare
-%define upstream_version 0.006000
+%define upstream_version 0.006001
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
 Epoch:      1
 
 Summary:    Adding keywords to perl, in perl
