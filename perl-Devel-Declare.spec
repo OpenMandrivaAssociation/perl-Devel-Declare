@@ -20,6 +20,7 @@ BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Sub::Name)
 BuildRequires: perl(Test::More) >= 0.880.0
+BuildRequires: perl(Test::Warn)
 BuildRequires: perl-devel
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
