@@ -13,6 +13,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Devel/Devel-Declare-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(B::Compiling)
+BuildRequires: perl(Module::Implementation)
 BuildRequires: perl(Test::Requires)
 BuildRequires:	perl(B::Hooks::EndOfScope)
 BuildRequires:	perl(B::Hooks::OP::Check)
