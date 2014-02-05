@@ -1,5 +1,5 @@
 %define upstream_name    Devel-Declare
-%define upstream_version 0.006014
+%define upstream_version 0.006015
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -121,5 +121,6 @@ make test
 
 * Wed Nov 26 2008 cpan2dist 0.003003-1mdv
 - initial mdv release, generated with cpan2dist
+
 
 
